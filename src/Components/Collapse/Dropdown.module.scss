@@ -1,0 +1,38 @@
+.collapse {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.upperSide {
+  //position: relative;
+  padding: 0 1rem 0 1rem;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary);
+  color: white;
+  border-radius: 5px;
+  p {
+    //margin-left: 1rem;
+    align-self: center;
+  }
+}
+
+.underSide {
+  padding: 1.4rem 1rem 3rem 1rem;
+  color: var(--primary);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: var(--gray-1);
+  @media screen and (min-width: 768px) {
+    padding: 1.4rem 1rem 0.8rem 1rem;
+  }
+
+
+}
+

@@ -1,16 +1,54 @@
 .header {
   color: var(--primary);
-  padding: 35px 55px 45px 55px;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  text-transform: uppercase;
 
-
+  img {
+  height: 60px ;
+    width: 180px;
+  }
 
    ul {
-     font-size: 1rem;
+
+     font-size: 0.8rem;
      display: flex;
      flex-direction: row;
+
+     li:first-child {
+       margin-right: 1rem;
+     }
    }
+
+  @media screen and (min-width: 768px) {
+    padding: 3rem 3rem;
+    img {
+  height: 50px;
+    width: 150px;
+    }
+
+    ul {
+      font-size: 1rem;
+
+      li:first-child {
+        margin-right: 2rem;
+      }
+    }
+
+  }
+  @media screen and (min-width: 992px) {
+    padding:2rem 3.5rem 2.5rem 3.5rem;
+    text-transform: inherit;
+   ul {
+     font-size: 1.4rem;
+   }
+
+  }
+
+
 }
+
+// TODO: Trouver un moyen de souligner les liens avec le css

@@ -6,12 +6,16 @@ function Header() {
   return (
     <div className={`${styles.header}`}>
       <img src={logo} alt="logo Kasa" />
-      <ul>
-        <Link to={"/"} className="mr-60">
-          Accueil
-        </Link>
-        <Link to={"/about"}>A Propos</Link>
-      </ul>
+      <nav>
+        <ul>
+          <li>
+            <Link to={"/"}>Accueil</Link>
+          </li>
+          <li>
+            <Link to={"/about"}>A Propos</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

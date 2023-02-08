@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // verifier BrowserRouter a l'air de servir à rien
 import "./assets/styles/index.scss";
-import App from "./App";
+//import App from "./App";
 import Error from "./Components/Error/Error";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Header />
-      <App />
+      {/*<App />*/}
       <Routes>
         <Route path={"/"} element={<Home />}></Route>
         <Route path={"/logement"} element={<Logement />}></Route>
@@ -27,10 +27,6 @@ root.render(
     </Router>
   </React.StrictMode>
 );
-
-// TODO: Verifier la conformité du header et footer et le cotes responsive
-
-// TODO: Creer les differents components
 
 // TODO: ● Pour la navigation dans l’application, vous pourrez soit faire un header et un footer, soit faire un layout dans lequel vous mettrez le reste de l’application via props.children. Pensez à créer ces composants et à y intégrer le composant du router.
 
