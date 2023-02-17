@@ -1,0 +1,56 @@
+.carouselContainer {
+  position: relative;
+  height: 280px;
+  width: 100%;
+  display: flex;
+
+
+  @media screen and (min-width: 768px) {
+    height: 380px;
+  }
+
+  @media screen and (min-width: 992px) {
+  height: 450px;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  p {
+    display: none;
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    bottom: 3%;
+    left: 50%;
+    @media screen and (min-width: 992px) {
+      display: inline;
+    }
+
+  }
+
+  i {
+    color: white;
+    font-size: 4rem;
+    position: absolute;
+    cursor: pointer;
+
+    &:first-child {
+      left: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
+
+    }
+
+    &:last-child {
+      right: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
+
+    }
+  }
+}

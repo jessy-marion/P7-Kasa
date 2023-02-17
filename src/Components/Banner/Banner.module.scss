@@ -1,16 +1,26 @@
 .bannerContainer {
-  background: url("../../assets/img/BG_Home.png")  bottom/cover;
+  position: relative;
   border-radius: 25px;
-  filter: brightness(95%);
+  object-fit: cover;
   height: 100px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  h1{
-    margin-left: 1rem ;
-    color: white;
+
+  img {
+    filter: brightness(65%);
+    height: 100% ;
+    width: 100%;
+    border-radius: 25px;
   }
 
+  h1{
+    position: absolute;
+    margin: 0 3rem 0 1rem;
+    color: white;
+
+  }
 
   @media screen and (min-width: 768px) {
     justify-content: center;
@@ -22,11 +32,9 @@
   @media screen and (min-width: 992px){
     height: 300px;
     margin-bottom: 3rem;
+    font-size: 1.6rem;
+
   }
 }
 
 
-
-
-
-//TODO: Faire en sorte que le texte passe à la ligne

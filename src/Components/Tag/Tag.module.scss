@@ -1,9 +1,24 @@
 .tag {
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 0.6rem;
+  display: flex;
+  margin-right: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  min-width: 95px;
   cursor: pointer;
   font-size: 0.6rem;
   color: white;
   background: var(--primary);
   border-radius: 10px;
-  width: 95px;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+
+
 }

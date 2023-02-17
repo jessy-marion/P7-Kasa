@@ -1,6 +1,8 @@
 import styles from "./Tag.module.scss";
-function Tag() {
-  return <div className={`${styles.tag} p-5`}>tag-name</div>;
+function Tag({ tag }) {
+  return <div className={styles.tag}>{tag}</div>;
 }
 
 export default Tag;
+
+//TODO : Ameliorer rendu tag

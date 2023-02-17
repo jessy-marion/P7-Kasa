@@ -1,20 +1,84 @@
-import { Link } from "react-router-dom";
-
+//import Error from "../Error/Error";
+import Slideshow from "../../Components/Slideshow/Slideshow";
+import Tag from "../../Components/Tag/Tag";
+import Rating from "../../Components/Rating/Rating";
+import Host from "../../Components/Host/Host";
+import Collapse from "../../Components/Collapse/Collapse";
+import styles from "./Logement.module.scss";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 function Logement() {
+  const params = useParams();
+  const navigate = useNavigate();
+  //console.log(params.id);
+
+  const [logement, setLogement] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/data/logements.json")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((datas) => {
+        if (
+          datas.some((data) => {
+            return data.id === params.id;
+          })
+        ) {
+          setLogement(datas.find((selected) => selected.id === params.id)); // ne pas supprimer ces deux lignes de code
+          setLoading(false);
+        } else {
+          return navigate("/404");
+        }
+      })
+      .catch((err) => console.log(err));
+  }, [params.id, navigate]); //erreur que je ne comprends pas
+
+  if (loading)
+    return (
+      <div className={styles.loader}>
+        <i className={`fas fa-spinner fa-pulse ${styles.spinner}`}></i>
+      </div>
+    );
+
+  const equipmentsList = logement.equipments.map((element, index) => {
+    return <li key={`${logement.title}-${index}`}>{element}</li>;
+  });
+
   return (
-    <div>
-      <h1>Je suis le logement</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
-        consequatur consequuntur deleniti dicta, distinctio dolorum ea earum
-        error eum eveniet ex expedita hic in labore laborum magnam, magni minima
-        modi molestiae natus quaerat quo ratione sapiente velit voluptates.
-        Aperiam dolor doloremque, inventore iure modi nihil porro quasi rem
-        tempore voluptates!
-      </p>
-      <Link to={"/"}>Accueil</Link>
-    </div>
+    <main>
+      <Slideshow images={logement.pictures} name={logement.title}></Slideshow>
+      <div className={styles.layout}>
+        <div className={styles.titlesContainer}>
+          <h1>{logement.title}</h1>
+          <h2>{logement.location}</h2>
+          <div className={styles.tagContainer}>
+            {logement.tags.map((tag, i) => {
+              return <Tag key={`${tag}-${i}`} tag={tag} />;
+            })}
+          </div>
+        </div>
+        <div className={styles.profileContainer}>
+          <Rating rating={parseInt(logement.rating)} />
+          <Host hostName={logement.host.name} hostImg={logement.host.picture} />
+        </div>
+      </div>
+      <div className={styles.collapseContainer}>
+        <Collapse
+          displayTitle={"Description"}
+          displayContent={logement.description}
+          notAList={true}
+        />
+        <Collapse displayTitle={"Equipement"} displayContent={equipmentsList} />
+      </div>
+    </main>
   );
 }
 
 export default Logement;
+
+//Todo :  Collapse => children props
+//TODO : regler spinner

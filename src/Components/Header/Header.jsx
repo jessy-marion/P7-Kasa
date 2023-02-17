@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className={`${styles.header}`}>
+    <header className={`${styles.header}`}>
       <img src={logo} alt="logo Kasa" />
       <nav>
         <ul>
@@ -16,7 +16,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 

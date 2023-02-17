@@ -1,3 +1,14 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  footer {
+    margin-top: auto;
+  }
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -5,11 +16,11 @@ body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  //color: var(--text-color);
 }
 
 h1, h2, h3, h4 {
   margin: 0;
+  font-weight: 400;
 }
 
 * {

@@ -1,10 +1,15 @@
-import styles from "./Dropdown.module.scss";
+import styles from "./Collapse.module.scss";
 import { useState } from "react";
 
-function Collapse({ displayContent, displayTitle }) {
+function Collapse({ displayContent, displayTitle, notAList }) {
   const [selected, setSelected] = useState(false);
-  const content = <p className={styles.underSide}>{displayContent}</p>;
-  function toggle() {
+  const content = notAList ? (
+    <p className={styles.underSide}>{displayContent}</p>
+  ) : (
+    <ul className={styles.underSide}>{displayContent}</ul>
+  );
+
+  function handleClick() {
     if (selected === false) {
       setSelected(true);
     } else {
@@ -13,26 +18,16 @@ function Collapse({ displayContent, displayTitle }) {
   }
 
   return (
-    <div
-      onClick={() => {
-        toggle();
-      }}
-      className={styles.collapse}
-    >
+    <div onClick={handleClick} className={styles.collapse}>
       <div className={styles.upperSide}>
         <p>{displayTitle}</p>
         <i
-          className={`fa-solid fa-chevron-up ${
-            selected ? "fa-rotate-180" : ""
-          }`}
+          className={`fa-solid fa-chevron-down ${selected && "fa-rotate-180"}`}
         ></i>
       </div>
-
-      {selected ? content : null}
+      {selected && content}
     </div>
   );
 }
 
 export default Collapse;
-
-//TODO :  Apparemment ce n'est pas un dropdown mais un accordéon/Collapse

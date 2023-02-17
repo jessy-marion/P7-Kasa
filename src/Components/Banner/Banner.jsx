@@ -1,10 +1,10 @@
 import styles from "./Banner.module.scss";
-//import BannerPicture from "../../assets/img/BG_Home.png";
 
-function Banner() {
+function Banner({ imgUrl, children }) {
   return (
     <div className={styles.bannerContainer}>
-      <h1>Chez vous, partout et ailleurs</h1>
+      <img src={imgUrl} alt={"Bannière"} />
+      {children}
     </div>
   );
 }

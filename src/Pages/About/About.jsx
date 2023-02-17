@@ -1,5 +1,7 @@
 import Collapse from "../../Components/Collapse/Collapse";
 import styles from "./About.module.scss";
+import Banner from "../../Components/Banner/Banner";
+import img from "../../assets/img/BG_About.png";
 
 const datasAbout = [
   {
@@ -26,8 +28,8 @@ const datasAbout = [
 
 function About() {
   return (
-    <div className={styles.about}>
-      <div className={styles.bannerAboutContainer}></div>
+    <main className={styles.about}>
+      <Banner imgUrl={img} />
       <div className={styles.collapseContainer}>
         {datasAbout.map((data, index) => {
           return (
@@ -39,10 +41,8 @@ function About() {
           );
         })}
       </div>
-    </div>
+    </main>
   );
 }
 
 export default About;
-
-//TODO: A voir : les bannieres sont differentes (pas la meme img), la banniere du menu home est un composant alors que celle de la section about n'est pas un composant et est crée directement depuis le fichier de la page !!! Trouver une solution simple ==> Balise <img> ?
