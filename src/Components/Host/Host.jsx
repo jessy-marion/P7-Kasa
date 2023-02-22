@@ -10,5 +10,3 @@ function Host({ hostName, hostImg }) {
 }
 
 export default Host;
-
-//TODO: faire en sorte que le nom/prenom passe à la ligne

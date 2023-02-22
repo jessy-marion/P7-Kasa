@@ -33,11 +33,9 @@ function About() {
       <div className={styles.collapseContainer}>
         {datasAbout.map((data, index) => {
           return (
-            <Collapse
-              displayTitle={data.title}
-              displayContent={data.content}
-              key={`${data.title}-${index}`}
-            />
+            <Collapse displayTitle={data.title} key={`${data.title}-${index}`}>
+              {data.content}
+            </Collapse>
           );
         })}
       </div>

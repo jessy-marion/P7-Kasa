@@ -70,5 +70,3 @@ function Rating({ rating }) {
 }
 
 export default Rating;
-
-//TODO: Optimiser

@@ -16,5 +16,3 @@ function Error() {
 }
 
 export default Error;
-
-//TODO: Pas de redirection 404 quand l'id du logement est pas bon

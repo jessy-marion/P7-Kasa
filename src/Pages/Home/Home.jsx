@@ -15,7 +15,6 @@ function Home() {
         }
       })
       .then((data) => {
-        //console.log(data);
         setLogements(data);
       })
       .catch((err) => console.log(err));

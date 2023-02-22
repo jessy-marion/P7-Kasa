@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 function Logement() {
   const params = useParams();
   const navigate = useNavigate();
-  //console.log(params.id);
 
   const [logement, setLogement] = useState({});
   const [loading, setLoading] = useState(true);
@@ -67,18 +66,15 @@ function Logement() {
         </div>
       </div>
       <div className={styles.collapseContainer}>
-        <Collapse
-          displayTitle={"Description"}
-          displayContent={logement.description}
-          notAList={true}
-        />
-        <Collapse displayTitle={"Equipement"} displayContent={equipmentsList} />
+        <Collapse displayTitle={"Description"}>
+          <p>{logement.description}</p>
+        </Collapse>
+        <Collapse displayTitle={"Equipement"}>
+          <ul>{equipmentsList}</ul>
+        </Collapse>
       </div>
     </main>
   );
 }
 
 export default Logement;
-
-//Todo :  Collapse => children props
-//TODO : regler spinner

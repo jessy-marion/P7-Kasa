@@ -1,13 +1,10 @@
 import styles from "./Collapse.module.scss";
 import { useState } from "react";
 
-function Collapse({ displayContent, displayTitle, notAList }) {
+function Collapse({ displayTitle, children }) {
   const [selected, setSelected] = useState(false);
-  const content = notAList ? (
-    <p className={styles.underSide}>{displayContent}</p>
-  ) : (
-    <ul className={styles.underSide}>{displayContent}</ul>
-  );
+
+  const content = <div className={styles.underSide}>{children}</div>;
 
   function handleClick() {
     if (selected === false) {

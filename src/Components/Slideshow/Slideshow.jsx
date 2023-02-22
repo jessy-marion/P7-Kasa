@@ -21,14 +21,18 @@ function Slideshow({ images, name }) {
 
   return (
     <div className={styles.carouselContainer}>
-      <i className="fa-solid fa-chevron-left" onClick={goPrev}></i>
+      {images.length !== 1 && (
+        <i className="fa-solid fa-chevron-left" onClick={goPrev}></i>
+      )}
       <img src={images[index]} alt={name} />
-      <p className={styles.counter}>{`${index + 1}/${images.length}`}</p>
-      <i className="fa-solid fa-chevron-right" onClick={goNext}></i>
+      {images.length !== 1 && (
+        <p className={styles.counter}>{`${index + 1}/${images.length}`}</p>
+      )}
+      {images.length !== 1 && (
+        <i className="fa-solid fa-chevron-right" onClick={goNext}></i>
+      )}
     </div>
   );
 }
 
 export default Slideshow;
-
-// TODO : Bulletpoints et le numéro de l'image à ajouter

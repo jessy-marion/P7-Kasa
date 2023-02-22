@@ -4,5 +4,3 @@ function Tag({ tag }) {
 }
 
 export default Tag;
-
-//TODO : Ameliorer rendu tag

@@ -5,9 +5,9 @@
   p {
     font-size: 0.8rem;
     color: var(--primary);
-    margin-right: 1rem;
+    margin-right: 0.4rem;
     display: flex;
-    line-break: loose;
+    width : min-content;
   }
 
   img {
