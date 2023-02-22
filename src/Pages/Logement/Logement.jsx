@@ -27,14 +27,14 @@ function Logement() {
             return data.id === params.id;
           })
         ) {
-          setLogement(datas.find((selected) => selected.id === params.id)); // ne pas supprimer ces deux lignes de code
+          setLogement(datas.find((selected) => selected.id === params.id)); //
           setLoading(false);
         } else {
           return navigate("/404");
         }
       })
       .catch((err) => console.log(err));
-  }, [params.id, navigate]); //erreur que je ne comprends pas
+  }, [params.id, navigate]);
 
   if (loading)
     return (
