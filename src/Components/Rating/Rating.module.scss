@@ -2,20 +2,26 @@
   font-size:20px;
 
   @media screen and (min-width: 768px) {
-    font-size: 30px;
+    font-size: 25px;
   }
 
-  @media screen and (min-width: 992px) {
-    font-size: 35px;
-  }
 }
 
 .positive {
   margin-right: 0.6rem;
   color: var(--primary);
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .negative {
   margin-right: 0.6rem;
-color: var(--gray-2)
+  color: var(--gray-2);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
 }
