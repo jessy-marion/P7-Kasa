@@ -4,6 +4,7 @@ import { useState } from "react";
 function Slideshow({ images, name }) {
   const [index, setCurrentIndex] = useState(0);
 
+  //fonction image précédente
   function goPrev() {
     if (index === 0) {
       setCurrentIndex(images.length - 1);
@@ -11,6 +12,8 @@ function Slideshow({ images, name }) {
       setCurrentIndex(index - 1);
     }
   }
+
+  //fonction image suivante
   function goNext() {
     if (index === images.length - 1) {
       setCurrentIndex(0);

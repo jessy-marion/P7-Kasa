@@ -6,6 +6,8 @@ import img from "../../assets/img/BG_Home.png";
 import { Link } from "react-router-dom";
 
 function Home() {
+  //Je récupère les datas du dossier public, cela me permet d'afficher les images des logements et leurs noms
+
   const [logements, setLogements] = useState([]);
   useEffect(() => {
     fetch("/data/logements.json")

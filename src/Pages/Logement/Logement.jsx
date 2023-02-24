@@ -14,6 +14,8 @@ function Logement() {
   const [logement, setLogement] = useState({});
   const [loading, setLoading] = useState(true);
 
+  //Je récupère les datas
+
   useEffect(() => {
     fetch("/data/logements.json")
       .then((res) => {

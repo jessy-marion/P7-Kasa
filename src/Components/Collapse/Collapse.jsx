@@ -4,8 +4,10 @@ import { useState } from "react";
 function Collapse({ displayTitle, children }) {
   const [selected, setSelected] = useState(false);
 
+  //Je récupère le contenu Children
   const content = <div className={styles.underSide}>{children}</div>;
 
+  //Ouverture fermeture Collapse
   function handleClick() {
     if (selected === false) {
       setSelected(true);

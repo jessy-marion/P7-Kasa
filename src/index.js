@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // verifier BrowserRouter a l'air de servir à rien
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./assets/styles/index.scss";
 import Error from "./Pages/Error/Error";
 import Header from "./Components/Header/Header";
